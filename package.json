@@ -1,0 +1,23 @@
+{
+  "name": "db_project",
+  "version": "1.0.0",
+  "description": "DB final project in the form of a store",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "console.log(\"this is the test command\");"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shanemmay/db_project.git"
+  },
+  "author": "shane marvin may",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shanemmay/db_project/issues"
+  },
+  "homepage": "https://github.com/shanemmay/db_project#readme",
+  "dependencies": {
+    "http": "0.0.0"
+  }
+}
