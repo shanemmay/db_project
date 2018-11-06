@@ -1,3 +1,27 @@
+/**
+ * Following site for resources
+ * 
+ * Heroku getting started
+ * https://github.com/heroku/node-js-getting-started/blob/master/index.js
+ * 
+ * node & mongo database
+ * https://www.w3schools.com/nodejs/nodejs_mongodb_create_db.asp
+ * 
+ * sqllite
+ * http://www.sqlitetutorial.net/sqlite-nodejs/
+ * 
+ * npm packages for databases
+ * https://www.npmjs.com/search?q=keywords:database
+ * 
+ * mysql & node
+ * http://www.mysqltutorial.org/mysql-nodejs/
+ * 
+ * more mysql
+ * https://appdividend.com/2018/08/25/how-to-connect-nodejs-application-to-mysql-database/
+ * 
+ * hooking up different db to heroku
+ * https://expressjs.com/en/guide/database-integration.html
+ */
 const express = require("express");
 const app = express();
 const port = 8080;
