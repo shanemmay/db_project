@@ -13,3 +13,26 @@ http.createServer( (req,res) =>
         res.write(data);
     });
 }).listen(8080);
+
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "shanemay",
+  database: "HotelDB"
+});
+
+con.connect( (err) => {
+    //testing connection to database
+  if (err) return console.log(err);
+  console.log("Connected to DB!");
+    //test query of database
+    con.query("SELECT * FROM Hotel;", (err,result,fields) => 
+    {
+        if (err) return console.log(err);
+        console.log(result);
+        console.log(fields);
+    });
+
+});
