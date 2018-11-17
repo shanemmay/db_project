@@ -9,12 +9,14 @@ const fs = require('fs');
 http.createServer( (req,res) => 
 {
     res.writeHead(200, {'Content-Type': 'text/html'});
+
+    res.write("PORN! WHY ARE YOU WATCHING PORN!!!");
     
-    fs.readFile("views/index.html", (err, data) => 
-    {
-        if (err) return console.log(err);
-        res.write(data);
-    });
+    // fs.readFile("views/index.html", (err, data) => 
+    // {
+    //     if (err) return console.log(err);
+    //     res.write(data);
+    // });
 }).listen(PORT);
 
 //example database code (used on shane's labtop. example query below)
