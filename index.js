@@ -12,6 +12,12 @@ http.createServer( (req,res) =>
 
     res.write("PORN! WHY ARE YOU WATCHING PORN!!!");
     
+    fs.readFile("test_file_reading.txt", (err,data) =>
+    {
+        if (err) return console.log(err);
+        res.write(data);
+    });
+
     // fs.readFile("views/index.html", (err, data) => 
     // {
     //     if (err) return console.log(err);
