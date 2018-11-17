@@ -18,23 +18,23 @@ http.createServer( (req,res) =>
 }).listen(PORT);
 
 //example database code (used on shane's labtop. example query below)
-let mysql = require('mysql');
+// let mysql = require('mysql');
 
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "shanemay",
-  database: "HotelDB"
-});
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "shanemay",
+//   database: "HotelDB"
+// });
 
-con.connect( (err) => {
-    //testing connection to database
-    if (err) return console.log(err);
-    console.log("Connected to DB!");
-    //test query of database
-    con.query("SELECT * FROM Hotel;", (err,result,fields) => 
-    {
-        if (err) return console.log(err);
-        console.log(result);
-    });
-});
+// con.connect( (err) => {
+//     //testing connection to database
+//     if (err) return console.log(err);
+//     console.log("Connected to DB!");
+//     //test query of database
+//     con.query("SELECT * FROM Hotel;", (err,result,fields) => 
+//     {
+//         if (err) return console.log(err);
+//         console.log(result);
+//     });
+// });
