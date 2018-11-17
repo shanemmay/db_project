@@ -10,9 +10,9 @@ http.createServer( (req,res) =>
 {
     res.writeHead(200, {'Content-Type': 'text/html'});
 
-    res.write("PORN! WHY ARE YOU WATCHING PORN!!!");
+    res.write("PORN! WHY ARE YOU WATCHING PORN!!!<br>");
     
-    fs.readFile("<br>test_file_reading.txt", (err,data) =>
+    fs.readFile("test_file_reading.txt", (err,data) =>
     {
         if (err) return console.log(err);
         res.write(data);
