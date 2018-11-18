@@ -3,27 +3,49 @@
 const PORT = (process.env.PORT == null || process.env.PORT == "") ? 8080 : process.env.PORT;
 console.log(`app started! PORT ${PORT}`);
 
-const http = require('http');
+// const http = require('http');
 const fs = require('fs');
+const express = require('express');
+const path = require('path');
 
-http.createServer( (req,res) => 
+var bodyParser = require("body-parser");
+
+express()
+.use(bodyParser.urlencoded({ extended: false }))
+.use('/', express.static(path.join(__dirname, 'views')) )
+.get("/basic-test", (req,res) => 
 {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-
-    res.write("PORN! WHY ARE YOU WATCHING PORN!!!<br>");
-    
-    fs.readFile("test_file_reading.txt", (err,data) =>
+    res.write("test complete");
+})
+.get("/file-test", (req,res) => 
+{
+    res.write("<h1>App Reached!</h1>");
+    fs.readFile("views/index.html", (err, data) => 
     {
         if (err) return console.log(err);
         res.write(data);
     });
+})
+.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
-    // fs.readFile("views/index.html", (err, data) => 
-    // {
-    //     if (err) return console.log(err);
-    //     res.write(data);
-    // });
-}).listen(PORT);
+// http.createServer( (req,res) => 
+// {
+//     res.writeHead(200, {'Content-Type': 'text/html'});
+
+//     res.write("PORN! WHY ARE YOU WATCHING PORN!!!<br>");
+    
+//     // fs.readFile("test_file_reading.txt", (err,data) =>
+//     // {
+//     //     if (err) return console.log(err);
+//     //     res.write(data);
+//     // });
+
+//     // fs.readFile("views/index.html", (err, data) => 
+//     // {
+//     //     if (err) return console.log(err);
+//     //     res.write(data);
+//     // });
+// }).listen(PORT);
 
 //example database code (used on shane's labtop. example query below)
 // let mysql = require('mysql');
