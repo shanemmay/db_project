@@ -1,3 +1,7 @@
+<!-- 
+    TODO
+    add images to products
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,105 +9,208 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"  />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script> -->
     <!-- Bootstrap info -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</head> 
+</head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-        <a class="navbar-brand" href="#">the Store</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Shop <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Cart & Checkout <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Sort
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Price</a>
-                    <a class="dropdown-item" href="#">Rating</a>
-                    <a class="dropdown-item" href="#">Seller I Prev Bought From</a>
-                    </div>
-                </li>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                </form>
-                
-            </ul>
-        </div>
+    
+    <div id="message-banner" class="alert alert-success" role="alert" style="position:fixed; text-align: center; display:none; clear: both; z-index: 100; width: 100vw;">
+            A simple success alert—check it out!
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" onclick="changeView('shop');">Shop <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" onclick="tableForCart(); changeView('cart');">Checkout</a>
+                    </li>
+                </ul>
+            </div>
     </nav>
 
-    <main role="main">
+    <div id="shop">
         <div class="row">
             <div class="col"></div>
             <div class="col">
-
-                <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png" alt="Card image cap" >
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+                <div class="card text-center" style="width: 18rem;">
+                    <img class="card-img-top" src="https://romancingyoursoul.com/wp-content/uploads/2017/05/magic-wand.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Magic Wand</h5>
+                        <p class="card-text">This Is a great magic wand.</p>
+                        <button class="btn btn-primary" onclick="addToCart({name:'Magic Wand',price:100.99});">$100.99</button>
+                    </div>
                 </div>
 
-                <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png" alt="Card image cap" >
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+                <div class="card text-center" style="width: 18rem;">
+                    <img class="card-img-top" src="data:image/png;base64,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" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Broken Computer</h5>
+                        <p class="card-text">The computer doesn't work but you can still use the parts.</p>
+                        <button class="btn btn-primary" onclick="addToCart({name:'Broken Computer',price:1.99});">$1.99</button>
+                    </div>
                 </div>
 
-                <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png" alt="Card image cap" >
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+                <div class="card text-center" style="width: 18rem;">
+                    <img class="card-img-top" src="https://cdn2.jomashop.com/media/catalog/product/o/m/omega-speedmaster-professional-moonwatch-men_s-watch-311.30.42.30.01.005_1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Time Machine</h5>
+                        <p class="card-text">Have regrets? Why don't you just go back and fix them?</p>
+                        <button class="btn btn-primary" onclick="addToCart({name:'Time Machine',price:9999.99});">$9999.99</button>
+                    </div>
                 </div>
             </div>
             <div class="col"></div>
         </div>
-    </main>
+    </div>
 
-    <!-- <style>
-        footer{
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            clear: both; 
-            margin-top: 1px;   
-        }
-    </style>
-
-    <footer class="mastfoot mt-auto">
-            <div class="row">
-                <div class="col"></div>
-                <div class="col">shop</div>
-                <div class="col">cart / checkout</div>
-                <div class="col">profile</div>
-                <div class="col"></div>
+    <div id="cart" style="display:none;">
+            <div id="table-container"></div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col">
+                <button id="cart-total" class="btn btn-success" onclick="dumbCheckout();"></button>
             </div>
-    </footer> -->
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+    </div>
 
+    
+
+    <script>
+        let cart = [];
+        let cartTotal = 0;
+        class Item
+        {
+            constructor(name, price, quantity)
+            {
+                this.name = name;
+                this.price = price;
+                this.quantity = quantity ? quantity : 1;
+            }
+        }
+        /*
+        func | when item is clicked;
+        add to cart,
+        tell user item was added to card
+        */
+        //func to add to cart
+        let addToCart = (item) =>
+        {
+            let newItem = new Item(item.name, item.price);
+            //if the item already exist, we will only inc the qty
+            if( !cart.hasOwnProperty(newItem.name)   )
+            {
+                cart[newItem.name] = newItem;
+                //let user know item was added to cart
+                notifyUser(`${newItem.name} was added to cart!`);
+            }
+            else
+            {
+                cart[newItem.name].quantity++;
+                //let user know item qty inc
+                notifyUser(`another ${newItem.name} added to cart!`);
+            }
+            console.log(cart );
+            calcTotal();
+        };
+        //func to remove from cart
+        let removeFromCart = (item) =>
+        {
+
+        };
+        //notify user of something
+        let notifyUser = (message) =>
+        {
+            console.log(message);
+            let messageBanner = document.querySelector('#message-banner');
+            messageBanner.innerHTML = message;
+            messageBanner.style.display = 'block';
+            setTimeout(() => {messageBanner.style.display = 'none'}, 2000);
+        };
+        //creating cart
+        let tableForCart = () =>
+        {
+            console.log('items in cart being put in table');
+            let table = `<table id="table" class="table table-bordered">
+            <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th></th>
+            </tr>`;
+            for(item in cart)
+            {
+                let temp = cart[item];
+                table += `<tr> 
+                <td>${temp.name}</td> 
+                <td>$${temp.price}</td> 
+                <td>${temp.quantity}</td>
+                <td><button id="${temp.name}" onclick="removeFromTable(this);">X</button></td>
+                </tr>`  
+            }
+            table += '</table>';
+
+            document.querySelector("#table-container").innerHTML = table;
+        };
+        //remove from table
+        let removeFromTable = (element) =>
+        {
+            console.log(element.parentNode.parentNode.rowIndex);
+            const targetRow = element.parentNode.parentNode.rowIndex;
+            document.querySelector("#table").deleteRow(targetRow);
+            // TODO add this to a function called 'removeFromCart'
+            delete cart[element.id];
+            calcTotal();
+        };
+        //toggle view from shop to cart and back
+        let changeView = (showMe) =>
+        {
+            const shop = document.querySelector("#shop");
+            const cart = document.querySelector("#cart");
+            console.log(showMe);
+            if( showMe == "shop")
+            {
+                shop.style.display = "block";
+                cart.style.display = "none";
+            }else
+            {
+                shop.style.display = "none";
+                cart.style.display = "block";
+            }
+        };
+        let calcTotal = () =>
+        {
+            cartTotal = 0;
+            for(let item in cart)
+            {
+                cartTotal += cart[item].price * cart[item].quantity;
+            }
+            document.querySelector("#cart-total").innerHTML = "$" + (Math.round(cartTotal * 100) / 100);
+            console.log(`cart total price updated to ${cartTotal}`);
+        };
+        let dumbCheckout = () =>
+        {
+            notifyUser('Thank you for shopping with us!');
+            setTimeout(() => {location.reload()}, 2000);
+        };
+    </script>
+    
 </body>
 </html>
